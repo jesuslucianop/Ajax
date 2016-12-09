@@ -1,0 +1,58 @@
+    <html>
+    <head>
+
+      <script type="text/javascript" src="jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script>
+$(document).ready(function() {
+$("#idForm").submit(function(e) {
+  $.ajax({
+           type: "POST",
+           url: data.php,
+           data: $("#idForm").serialize(), // serializes the form's elements.
+           success: function(data)
+           {
+               alert(data); // show response from the php script.
+           }
+         });
+})
+});
+
+
+      </script>
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/bootstrap-theme.css" />
+
+        </head>
+        <body>
+          <div class="col-md-6">
+  <div class="col-md-4">
+  <div class="col-md-2">
+<div class="input-group">
+<form method="post" action="" id="idForm">
+
+
+<div class="form-group">
+  <label>Nombre</label>
+  <input type="text" name="nb" id="nb" class="form-control"/>
+</div>
+<div class="form-group">
+  <label>Apellido</label>
+  <input type="text" name="ap" id="ap" class="form-control"/>
+</div>
+<div class="form-group">
+  <label>Carrera</label>
+  <input type="text" name="c" id="c" class="form-control"/>
+</div>
+<div class="form-group">
+  <label>edad</label>
+  <input type="text" name="ed" id="ed" class="form-control"/>
+</div>
+  </div>
+  <button id="btn" class="btn btn-secondary">Enviar</button>
+  </div>
+</form>
+</div>
+  </div>
+          </body>
+   </html>
